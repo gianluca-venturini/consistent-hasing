@@ -1,10 +1,10 @@
 const { assignValuesToServer } = require('./consistent_hash');
 const _ = require('lodash');
 
-const NUM_VALUES = 1000;
+const NUM_VALUES = 10000;
 const values = _.range(NUM_VALUES);
 
-const beforeNumServers = 3;
+const beforeNumServers = 4;
 const afterNumServer = beforeNumServers + 1;
 
 const assignmentBefore = assignValuesToServer(values, beforeNumServers);
