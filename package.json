@@ -1,0 +1,13 @@
+{
+  "name": "consistent-hasing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine"
+  },
+  "dependencies": {
+    "jasmine": "^3.6.4",
+    "lodash": "^4.17.20"
+  }
+}
