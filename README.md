@@ -2,15 +2,15 @@
 
 Simple implementation of consistent hashing inspired by https://www.toptal.com/big-data/consistent-hashing.
 
-This implementation maps a set of values into N possible servers, providing the following properties:
-1. Adding one server will redistribute a fair amount of values to that server, removing them fairly from all the other servers
-2. Adding one server will not move values among the present servers
+This implementation maps a set of keys into N possible servers, providing the following properties:
+1. Adding one server will redistribute a fair amount of keys to that server, removing them fairly from all the other servers
+2. Adding one server will not move keys among the present servers
 3. The opposite is true for removing a server
 
 
 ### Example
 
-In this example server `[4]` is added to the existing servers `[0, 1, 2, 3]`, the number of values moved are indicated with `{source} -> {destination}: {num_keys}`.
+In this example server `[4]` is added to the existing servers `[0, 1, 2, 3]`, the number of keys moved are indicated with `{source} -> {destination}: {num_keys}`.
 ```
   [ '0 -> 4', 488 ],
   [ '1 -> 4', 506 ],

@@ -29,7 +29,7 @@ describe('toDegree', () => {
 
 describe('closestPointId', () => {
 
-    it('find the closest server for a value in the middle', () => {
+    it('find the closest server for a key in the middle', () => {
         const serverPositions = [
             { deg: 10, serverId: 0 },
             { deg: 20, serverId: 1 },
@@ -39,7 +39,7 @@ describe('closestPointId', () => {
         expect(closestServerId(10.0001, serverPositions)).toBe(0);
     });
 
-    it('find the correct server for values in the middle with 3 servers', () => {
+    it('find the correct server for keys in the middle with 3 servers', () => {
         const serverPositions = [
             { deg: 10, serverId: 0 },
             { deg: 20, serverId: 1 },
@@ -49,7 +49,7 @@ describe('closestPointId', () => {
         expect(closestServerId(25, serverPositions)).toBe(1);
     });
 
-    it('find the correct server for a value above the max server', () => {
+    it('find the correct server for a key above the max server', () => {
         const serverPositions = [
             { deg: 10, serverId: 0 },
             { deg: 20, serverId: 1 },
@@ -57,7 +57,7 @@ describe('closestPointId', () => {
         expect(closestServerId(30, serverPositions)).toBe(1);
     });
 
-    it('find the correct server for a value below the min server', () => {
+    it('find the correct server for a key below the min server', () => {
         const serverPositions = [
             { deg: 10, serverId: 0 },
             { deg: 20, serverId: 1 },

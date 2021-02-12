@@ -72,7 +72,7 @@ function calculateDistance(closest, valDegree) {
 
 const SERVER_POINTS = 1000;
 
-function assignValuesToServer(values, numServers) {
+function assignKeysToServer(keys, numServers) {
     const serverPositions = [];
     for (const serverId of _.range(numServers)) {
         for (const pointId of _.range(SERVER_POINTS)) {
@@ -84,12 +84,12 @@ function assignValuesToServer(values, numServers) {
         }
     }
 
-    return values.map((v) => computeValueToServer(v, serverPositions));
+    return keys.map((v) => computeValueToServer(v, serverPositions));
 }
 
 module.exports = {
     hash,
     toDegree,
     closestServerId,
-    assignValuesToServer
+    assignKeysToServer
 };

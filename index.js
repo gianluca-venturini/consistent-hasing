@@ -1,14 +1,14 @@
-const { assignValuesToServer } = require('./consistent_hash');
+const { assignKeysToServer } = require('./consistent_hash');
 const _ = require('lodash');
 
-const NUM_VALUES = 10000;
-const values = _.range(NUM_VALUES);
+const NUM_KEYS = 10000;
+const keys = _.range(NUM_KEYS);
 
 const beforeNumServers = 4;
 const afterNumServer = beforeNumServers + 1;
 
-const assignmentBefore = assignValuesToServer(values, beforeNumServers);
-const assignmentAfter = assignValuesToServer(values, afterNumServer);
+const assignmentBefore = assignKeysToServer(keys, beforeNumServers);
+const assignmentAfter = assignKeysToServer(keys, afterNumServer);
 
 function calculateKey(from, to) {
     return `${from} -> ${to}`;
@@ -16,7 +16,7 @@ function calculateKey(from, to) {
 
 const assignmentChange = {};
 
-for (let i = 0; i < values.length; i += 1) {
+for (let i = 0; i < keys.length; i += 1) {
     if (assignmentBefore[i] === assignmentAfter[i]) {
         // we're not interested in the case in which the server doesn't change
         continue;
